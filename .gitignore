@@ -31,3 +31,6 @@ node_modules
 # sources
 content/data
 content/images
+
+# Custom Config
+config.js
