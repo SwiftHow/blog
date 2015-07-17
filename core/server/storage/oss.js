@@ -67,7 +67,7 @@ OssStore.prototype.save = function (image) {
         return Promise.promisify(fs.unlink)(savedpath);
     }).then(function () {
         // prefix + targetFilename
-        var fullUrl = ossConfig.prefix + targetFilename;
+        var fullUrl = (ossConfig.cdnPrefix ? ossConfig.cdnPrefix : ossConfig.prefix) + targetFilename;
         return fullUrl;
     }).catch(function (e) {
         errors.logError(e);
